@@ -1,3 +1,41 @@
-<h1>
-    hello my friends 
-</h1>
+{{!--navigation bar--}}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+        <img src="img/se.png" class="img-fluid logo"  alt="">
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse ms-2 ms-lg-0" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active medium hover" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link medium hover" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link medium hover" href="#">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link medium hover" href="#">Login</a>
+        </li>
+        <li class="nav-item d-none d-lg-block">
+          <a class="nav-link medium btn-lg btn-dark text-white" href="#">SignUp</a>
+        </li>
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link medium hover" href="#">SignUp</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

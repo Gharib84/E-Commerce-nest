@@ -1,0 +1,118 @@
+/* our variable */
+
+$bg-primary-app: #fff;
+$color-primary-app: #fff;
+$bg-secondary-app: #000;
+$color-secondary-app: #000;
+$bg-app: #E6C744;
+$color-silver: #C2C8DA;
+
+
+.bg-primary-app {
+    background-color: $bg-primary-app;
+}
+
+.color-primary-app {
+    color: $color-primary-app;
+}
+
+.bg-secondary-app {
+    background-color: $bg-secondary-app;
+}
+
+.color-secondary-app {
+    color:$color-secondary-app;
+}
+
+.bg-app {
+    background-color: $bg-app;
+}
+
+.color-silver {
+    background-color: $color-silver;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*::before , *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html, body {
+    font-family:'Poppins', sans-serif;
+}
+
+.medium {
+    font-family:'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.regular{
+    font-family:'Poppins', sans-serif;
+    font-weight: 400;
+}
+
+.black {
+    font-family:'Poppins', sans-serif;
+    font-weight: 900;
+}
+
+
+.navbar-nav{
+    .hover:hover{
+        font-weight: bold;
+        color: blueviolet !important;
+    }
+}
+
+.logo {
+    width: 200px;
+}
+
+.card {
+    background-color: $color-silver;
+}
+
+@media(max-width: 768px){
+
+    .logo {
+        width: 100px;
+    }
+
+    .card {
+        background-color: $bg-primary-app;
+    }
+
+    .navbar-nav{
+        .hover:hover{
+            font-weight: bold;
+            color: blueviolet !important;
+        }
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 992px){
+    
+    .logo {
+        width: 100px;
+    }
+
+    .card {
+        background-color: $bg-primary-app !important;
+    }
+    .navbar-nav{
+        .hover:hover{
+            font-weight: bold;
+            color: blueviolet !important;
+        }
+    }
+}
