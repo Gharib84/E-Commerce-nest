@@ -21,7 +21,7 @@ $color-silver: #C2C8DA;
 }
 
 .color-secondary-app {
-    color:$color-secondary-app;
+    color: $color-secondary-app;
 }
 
 .bg-app {
@@ -39,35 +39,37 @@ $color-silver: #C2C8DA;
     padding: 0;
 }
 
-*::before , *::after {
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 
 }
 
-html, body {
-    font-family:'Poppins', sans-serif;
+html,
+body {
+    font-family: 'Poppins', sans-serif;
 }
 
 .medium {
-    font-family:'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
 }
 
-.regular{
-    font-family:'Poppins', sans-serif;
+.regular {
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
 }
 
 .black {
-    font-family:'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 900;
 }
 
 
-.navbar-nav{
-    .hover:hover{
+.navbar-nav {
+    .hover:hover {
         font-weight: bold;
         color: blueviolet !important;
     }
@@ -81,7 +83,7 @@ html, body {
     background-color: $color-silver;
 }
 
-@media(max-width: 768px){
+@media(max-width: 768px) {
 
     .logo {
         width: 100px;
@@ -91,28 +93,53 @@ html, body {
         background-color: $bg-primary-app;
     }
 
-    .navbar-nav{
-        .hover:hover{
+    .navbar-nav {
+        .hover:hover {
             font-weight: bold;
             color: blueviolet !important;
         }
     }
+
+    .flex-items-colums {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .sm-text {
+        text-align: center !important;
+        width: 50%;
+    }
 }
 
 
-@media (min-width: 769px) and (max-width: 992px){
-    
+@media (min-width: 769px) and (max-width: 992px) {
+
     .logo {
         width: 100px;
     }
 
     .card {
-        background-color: $bg-primary-app !important;
+        background-color: $bg-primary-app  !important;
     }
-    .navbar-nav{
-        .hover:hover{
+
+    .navbar-nav {
+        .hover:hover {
             font-weight: bold;
             color: blueviolet !important;
         }
+    }
+
+    .flex-items-colums {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .sm-text {
+        text-align: center !important;
+        width: 30%;
     }
 }
