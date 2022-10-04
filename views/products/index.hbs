@@ -1,0 +1,36 @@
+{{>default}}
+<div class="container mt-5 mb-5">
+    <h2 class="fw-bold text-dark black mb-5 ms-2">
+        Products List:
+    </h2>
+
+    <div class="row g-5 g-lg-3">
+        {{#each products}}
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+                <div class="bg-image hover-overlay ripple"
+                    data-mdb-ripple-color="light">
+                    <img
+                        src="{{img}}"
+                        class="img-fluid"/>
+                    <a href="#!">
+                        <div class="mask" style="background-color: rgba(251,
+                            251, 251, 0.15);"></div>
+                    </a>
+                </div>
+                <div class="card-body" id="simple-grid-css">
+                    <h5 class="card-title medium text-dark">{{title}}</h5>
+                    <p class="card-text text-muted">{{subtitle}}.</p>
+                    <div class="grid-item-two">
+                        <a href="#!">
+                            <img src="img/{{icon}}" class="img-fluid float-end"
+                                alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{>footer}}
