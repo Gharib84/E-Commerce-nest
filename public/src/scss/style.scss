@@ -162,3 +162,9 @@ body {
         width: 30%;
     }
 }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+       .small-items{
+         padding: 2rem 0;
+       }
+}
