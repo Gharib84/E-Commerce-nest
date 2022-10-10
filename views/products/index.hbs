@@ -7,7 +7,7 @@
     <div class="row g-5 g-lg-3">
         {{#each products}}
         <div class="col-12 col-md-6 col-lg-4">
-            <div class="card">
+            <div class="card mb-0 mb-lg-5">
                 <div class="bg-image hover-overlay ripple"
                     data-mdb-ripple-color="light">
                     <img
@@ -22,7 +22,7 @@
                     <h5 class="card-title medium text-dark">{{title}}</h5>
                     <p class="card-text text-muted">{{subtitle}}.</p>
                     <div class="grid-item-two">
-                        <a href="#!">
+                        <a href="/products/{{id}}">
                             <img src="img/{{icon}}" class="img-fluid float-end"
                                 alt="">
                         </a>

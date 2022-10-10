@@ -5,6 +5,8 @@ export class ProductsService {
     /**
      * this service that help us to create static product api 
      * before dealiing with database 
+     * @array products that return array of object
+     * @method productById return specific product by its id
      */
     products: Product[] = [
         new Product(1, "img/product_1.png", "Hoodies & Sweetshir", "Explore Now!.", 100, "arrow.svg"),
@@ -33,4 +35,8 @@ export class ProductsService {
         return this.products;
     }
 
+
+    getProductById(id: number): Product {
+       return this.products.find((p)=> p.id == id)
+    }
 }
