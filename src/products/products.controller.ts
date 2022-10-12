@@ -1,29 +1,34 @@
-import { Controller, Get, Render, Param } from '@nestjs/common';
+import { Controller, Get, Render, Param, Res } from '@nestjs/common';
 import { ProductsService } from 'src/services/products/products.service';
+import { ProductentityService } from 'src/services/products/productentity/productentity.service';
+import { response } from 'express';
 
 @Controller('products')
 export class ProductsController {
-    constructor(private readonly p: ProductsService) {
+    constructor(private readonly p: ProductsService, private contents: ProductentityService) {
+        
 
     }
 
     @Get("/")
     @Render('products/index')
-    index() {
+    async index() {
+        const products = await this.contents.getProducts()
         return {
-            products: this.p.productsList()
+            products: products
         }
     }
 
 
     @Get(':id')
-    @Render('products/show')
-    show(@Param() param) {
-        let specificProduct = this.p.getProductById(parseInt(param.id));
-
-        return {
-            product: specificProduct
+    async show(@Param() params, @Res() response){
+        const p =  await this.contents.product(parseInt(params.id));
+        if (p === undefined) {
+            return response.redirect('/products');
         }
-         
+        return response.render('products/show',{
+            product: p
+        });
+       
     }
 }

@@ -19,7 +19,8 @@ import { ProductentityService } from './services/products/productentity/producte
       database: 'online_store',
       entities: [Poductentity],
       synchronize: true,
-    })
+    }),
+    TypeOrmModule.forFeature([Poductentity])
   ],
   controllers: [AppController, ProductsController],
   providers: [ProductsService, ProductentityService],
