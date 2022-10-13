@@ -1,0 +1,26 @@
+{{#>admin}}
+{{#*inline "table"}}
+<table class="table table-striped mb-4 table-responsive">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each allProducts}}
+            <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{title}}</td>
+            <td><a href="">Edit</a></td>
+            <td><a href="">Delete</a></td>
+        </tr>
+
+        {{/each}}
+    </tbody>
+</table>
+{{/inline}}
+
+{{/admin}}
