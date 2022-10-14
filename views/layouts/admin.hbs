@@ -34,6 +34,10 @@
                     <a class="nav-link" href="#">Products</a>
                 </li>
                 <li class="nav-item mb-2">
+                    <a class="nav-link" href="#" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Add New
+                        Product</a>
+                </li>
+                <li class="nav-item mb-2">
                     <a class="btn btn-secondary btn-lg" href="#">Back To
                         Home</a>
                 </li>
@@ -47,7 +51,8 @@
                     <!-- Toggle button -->
                     <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
                         data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                        aria-expanded="false" aria-label="Toggle
+                            navigation">
                         <i class="fas fa-bars"></i>
                     </button>
 
@@ -55,7 +60,8 @@
                     <div class="collapse navbar-collapse ms-3 ms-lg-0" id="navbarSupportedContent">
                         <!-- Navbar brand -->
                         <a class="navbar-brand mt-2 mt-lg-0" href="/admin">
-                            <img src="../../img/se.png" height="30" alt="MDB Logo" loading="lazy" />
+                            <img src="../../img/se.png" height="30" alt="MDB
+                                    Logo" loading="lazy" />
                         </a>
                         <!-- Left links -->
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -66,7 +72,8 @@
                                 <a class="nav-link black text-primary" href="#">Products</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link black text-primary" href="#">New Product</a>
+                                <a class="nav-link black text-primary" href="#" data-mdb-toggle="modal"
+                                    data-mdb-target="#exampleModal">Add New Product</a>
                             </li>
                         </ul>
                         <!-- Left links -->
@@ -110,7 +117,8 @@
                                     align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar"
                                 role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                                 <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle"
-                                    height="25" alt="Black and White Portrait of a Man" loading="lazy" />
+                                    height="25" alt="Black and White
+                                        Portrait of a Man" loading="lazy" />
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                                 <li>
@@ -139,6 +147,68 @@
                     <div class="col-12">
                         {{!--table--}}
                         {{>table}}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Create Product</h5>
+                            <button type="button" class="btn-close" data-mdb-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{!--form here--}}
+
+                            <form method="post" action="/admin/index" enctype="multipart/form-data">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                <div class="row mb-4">
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="customFile">Product Image</label>
+                                            <input type="file" name="image" class="form-control" id="customFile" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-outline">
+                                            <input type="text" id="form6Example2" name="title" class="form-control" />
+                                            <label class="form-label" for="form6Example2">Product Title</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Text input -->
+                                <div class="form-outline mb-4">
+                                    <input type="text" id="form6Example3" class="form-control" name="subtitle"/>
+                                    <label class="form-label" for="form6Example3">Product Subtitle</label>
+                                </div>
+
+                                <!-- Text input -->
+                                <div class="form-outline mb-4">
+                                    <input type="number" id="form6Example4" class="form-control"  name="price"/>
+                                    <label class="form-label" for="form6Example4">Product Price</label>
+                                </div>
+
+                                <!-- Email input -->
+                                <div class="form-outline mb-4">
+                                    <label class="form-label" for="customFile">Product Icon</label>
+                                    <input type="file" name="icon" class="form-control" id="customFile" />
+                                </div>
+
+                                <!-- Submit button -->
+                                <button type="submit" class="btn btn-primary btn-block mb-4"
+                                    style="background-color: #E6C744; color:black">Save</button>
+                            </form>
+
+                            {{!--end form--}}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>

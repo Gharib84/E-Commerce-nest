@@ -7,6 +7,7 @@ import { Poductentity } from 'src/models/poductentity';
  * ProductentityService 
  * @method getProducts return list of products 
  * @method product return specific product by iD
+ * @method createProduct return new product will be create in db
  */
 
 @Injectable()
@@ -26,6 +27,10 @@ export class ProductentityService {
                 id: id
             }
         });
+    }
+
+    createProduct(product:Poductentity):Promise<Poductentity>{
+        return this.productRepository.save(product);
     }
 
 
