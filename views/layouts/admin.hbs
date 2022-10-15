@@ -164,41 +164,36 @@
                         <div class="modal-body">
                             {{!--form here--}}
 
-                            <form method="post" action="/admin/index" enctype="multipart/form-data">
-                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <form method="post" action="/admin/store" enctype="multipart/form-data">
+                                
                                 <div class="row mb-4">
+                                    {{!--product Image--}}
                                     <div class="col">
                                         <div class="form-outline">
                                             <label class="form-label" for="customFile">Product Image</label>
-                                            <input type="file" name="image" class="form-control" id="customFile" />
+                                            <input type="file" name="image" class="form-control" id="customFile" required/>
                                         </div>
                                     </div>
+                                    {{!--title--}}
                                     <div class="col">
                                         <div class="form-outline">
-                                            <input type="text" id="form6Example2" name="title" class="form-control" />
+                                            <input type="text" id="form6Example2" name="title" class="form-control" required/>
                                             <label class="form-label" for="form6Example2">Product Title</label>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- Text input -->
+                                <!-- subtitle -->
                                 <div class="form-outline mb-4">
-                                    <input type="text" id="form6Example3" class="form-control" name="subtitle"/>
+                                    <input type="text" id="form6Example3" class="form-control" name="subtitle" required/>
                                     <label class="form-label" for="form6Example3">Product Subtitle</label>
                                 </div>
 
-                                <!-- Text input -->
+                                <!-- price -->
                                 <div class="form-outline mb-4">
-                                    <input type="number" id="form6Example4" class="form-control"  name="price"/>
+                                    <input type="number" id="form6Example4" class="form-control"  name="price" required/>
                                     <label class="form-label" for="form6Example4">Product Price</label>
                                 </div>
-
-                                <!-- Email input -->
-                                <div class="form-outline mb-4">
-                                    <label class="form-label" for="customFile">Product Icon</label>
-                                    <input type="file" name="icon" class="form-control" id="customFile" />
-                                </div>
-
                                 <!-- Submit button -->
                                 <button type="submit" class="btn btn-primary btn-block mb-4"
                                     style="background-color: #E6C744; color:black">Save</button>

@@ -23,4 +23,30 @@ export class Poductentity {
 
     @Column()
     icon: string
+
+
+    setImg(image: string): void {
+        this.img = image;
+    }
+
+    setTtile(title: string): void {
+        this.title = title;
+    }
+
+    setSubTitle(sub: string): void {
+        this.subtitle = sub;
+
+    }
+
+    setPrice(price:number):void {
+        this.price = price;
+    }
+
+    setIcon(icon:string = "arrow.svg"):void {
+        this.icon = icon;
+    }
+
+    getIcon(icon:string = "arrow.svg"):string {
+        return this.icon
+    }
 }
