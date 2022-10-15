@@ -8,6 +8,7 @@ import { Poductentity } from 'src/models/poductentity';
  * @method getProducts return list of products 
  * @method product return specific product by iD
  * @method createProduct return new product will be create in db
+ * @method deleteProduct for deleting specific product accoridng its iD
  */
 
 @Injectable()
@@ -17,20 +18,25 @@ export class ProductentityService {
     }
 
 
-    getProducts():Promise<Poductentity[]>{
+    getProducts(): Promise<Poductentity[]> {
         return this.productRepository.find();
     }
 
-    product(id: number):Promise<Poductentity>{
+    product(id: number): Promise<Poductentity> {
         return this.productRepository.findOne({
-            where:{
+            where: {
                 id: id
             }
         });
     }
 
-    createProduct(product:Poductentity):Promise<Poductentity>{
+    createProduct(product: Poductentity): Promise<Poductentity> {
         return this.productRepository.save(product);
+    }
+
+
+    async deleteProduct(id: number): Promise<void> {
+        await this.productRepository.delete(id)
     }
 
 

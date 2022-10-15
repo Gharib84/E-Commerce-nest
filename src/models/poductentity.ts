@@ -47,6 +47,6 @@ export class Poductentity {
     }
 
     getIcon(icon:string = "arrow.svg"):string {
-        return this.icon
+        return this.icon = icon;
     }
 }

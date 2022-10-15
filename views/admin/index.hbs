@@ -1,8 +1,8 @@
 {{#>admin}}
 {{#*inline "table"}}
-    <h1 class="black text-dark ms-3  mt-0 mt-lg-2 mb-5">
-        Manage Product
-    </h1>
+<h1 class="black text-dark ms-3 mt-0 mt-lg-2 mb-5">
+    Manage Product
+</h1>
 <table class="table table-striped mb-4 table-responsive">
     <thead>
         <tr>
@@ -14,11 +14,18 @@
     </thead>
     <tbody>
         {{#each allProducts}}
-            <tr>
+        <tr>
             <th scope="row">{{id}}</th>
             <td>{{title}}</td>
             <td><a href="">Edit</a></td>
-            <td><a href="">Delete</a></td>
+            <td>
+                <form action="/admin/{{id}}" method="post">
+                        <button type="submit" class="btn btn-danger btn-sm btn-rounded">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+
+                </form>
+            </td>
         </tr>
 
         {{/each}}
