@@ -1,9 +1,10 @@
-import { Controller, Render, Get, Post, Body, Redirect, UseInterceptors, UploadedFile, Param } from '@nestjs/common';
+import { Controller, Render, Get, Post, Body, Redirect, UseInterceptors, UploadedFile, Param, Res } from '@nestjs/common';
 import { ProductentityService } from 'src/services/products/productentity/productentity.service';
-import { Express } from 'express';
+import { Express, response } from 'express';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Poductentity } from 'src/models/poductentity';
 import { parse } from 'path/posix';
+
 @Controller('admin')
 export class AdminController {
 
@@ -42,6 +43,37 @@ export class AdminController {
 
     }
 
-    
+    @Get(':id')
+    async edit(@Param() params: any, @Res() response) {
+        const product = await this.products.product(parseInt(params.id));
+        return response.render('admin/edit', {
+            p: product
+        })
+
+
+
+    }
+
+    @Post(':id/update')
+    @UseInterceptors(FileInterceptor('image', { dest: './public/img/' }))
+    @Redirect('http://localhost:3000/admin')
+    async update(@Body() Body, @UploadedFile() file: Express.Multer.File, @Param() params: any) {
+        const pro = await this.products.product(parseInt(params.id));
+        if(file){
+            pro.setImg(file.filename);
+
+        }
+        pro.setTtile(Body.title);
+        pro.setSubTitle(Body.subtitle);
+        pro.setPrice(Body.price);
+        pro.icon =  "arrow.svg";
+        await this.products.update(pro);
+        
+
+
+    }
+
+
+
 
 }

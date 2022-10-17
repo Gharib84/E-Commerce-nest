@@ -15,7 +15,7 @@ export class Poductentity {
     @Column()
     title: string
 
-    @Column()
+    @Column("text")
     subtitle: string
 
     @Column()
@@ -46,7 +46,24 @@ export class Poductentity {
         this.icon = icon;
     }
 
-    getIcon(icon:string = "arrow.svg"):string {
-        return this.icon = icon;
+   
+    get productID():number {
+        return this.id;
+    }
+
+    get productImg():string{
+        return this.img;
+    }
+
+    get productTile():string {
+        return this.title;
+    }
+
+    get productSubTitle():string {
+        return this.subtitle;
+    }
+
+    get ProductPrice():number{
+        return this.price;
     }
 }

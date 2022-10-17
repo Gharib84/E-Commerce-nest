@@ -47,7 +47,7 @@
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <!-- Container wrapper -->
-                <div class="container-fluid">
+                <div class="container">
                     <!-- Toggle button -->
                     <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
                         data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -141,7 +141,7 @@
             <!-- Navbar -->
         </div>
         {{!--end navbar for admin panel--}}
-        <main class="mt-0">
+        
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
@@ -165,19 +165,21 @@
                             {{!--form here--}}
 
                             <form method="post" action="/admin/store" enctype="multipart/form-data">
-                                
+
                                 <div class="row mb-4">
                                     {{!--product Image--}}
                                     <div class="col">
-                                        <div class="form-outline">
+                                        <div class="form-outline mb-4">
                                             <label class="form-label" for="customFile">Product Image</label>
-                                            <input type="file" name="image" class="form-control" id="customFile" required/>
+                                            <input type="file" name="image" class="form-control" id="customFile"
+                                                required />
                                         </div>
                                     </div>
                                     {{!--title--}}
                                     <div class="col">
-                                        <div class="form-outline">
-                                            <input type="text" id="form6Example2" name="title" class="form-control" required/>
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="form6Example2" name="title" class="form-control"
+                                                required />
                                             <label class="form-label" for="form6Example2">Product Title</label>
                                         </div>
                                     </div>
@@ -185,13 +187,16 @@
 
                                 <!-- subtitle -->
                                 <div class="form-outline mb-4">
-                                    <input type="text" id="form6Example3" class="form-control" name="subtitle" required/>
-                                    <label class="form-label" for="form6Example3">Product Subtitle</label>
+                                    <textarea class="form-control" id="form6Example3" name="subtitle" rows="4">
+                                    </textarea>
+                                    <label class="form-label" for="form6Example3">Product Details</label>
                                 </div>
+
 
                                 <!-- price -->
                                 <div class="form-outline mb-4">
-                                    <input type="number" id="form6Example4" class="form-control"  name="price" required/>
+                                    <input type="number" id="form6Example4" class="form-control" name="price"
+                                        required />
                                     <label class="form-label" for="form6Example4">Product Price</label>
                                 </div>
                                 <!-- Submit button -->
@@ -208,12 +213,8 @@
                 </div>
             </div>
             {{>footer}}
+            </div>
 
-        </main>
-
-
-
-    </div>
     <!-- MDB -->
     <script type="text/javascript" src="../../js/mdb.min.js"></script>
     <!-- Custom scripts -->

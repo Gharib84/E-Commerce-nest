@@ -23,11 +23,9 @@ export class ProductentityService {
     }
 
     product(id: number): Promise<Poductentity> {
-        return this.productRepository.findOne({
-            where: {
-                id: id
-            }
-        });
+        return this.productRepository.findOneBy({
+            id: id // where id is your column name
+        })
     }
 
     createProduct(product: Poductentity): Promise<Poductentity> {
@@ -40,5 +38,11 @@ export class ProductentityService {
     }
 
 
+    update(produt: Poductentity): Promise<Poductentity> {
+        if (produt.id != 0 || produt.id != undefined) {
+            return this.productRepository.save(produt);
+        }
+
+    }
 
 }

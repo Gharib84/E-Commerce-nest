@@ -7,6 +7,9 @@ import { Poductentity } from './models/poductentity';
 import { ProductentityService } from './services/products/productentity/productentity.service';
 import { AdminController } from './admin/admin.controller';
 import { AdminModule } from './admin/admin.module';
+import { UsersTable } from './models/users-table';
+import { UserService } from './services/user/user.service';
+import { AuthModule } from './auth/auth.module';
 
 
 
@@ -19,13 +22,14 @@ import { AdminModule } from './admin/admin.module';
       username: 'root',
       password: '',
       database: 'online_store',
-      entities: [Poductentity],
+      entities: [Poductentity,UsersTable],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([Poductentity]),
-    AdminModule
+    TypeOrmModule.forFeature([Poductentity, UsersTable]),
+    AdminModule,
+    AuthModule
   ],
   controllers: [AppController, ProductsController, AdminController],
-  providers: [ProductsService, ProductentityService],
+  providers: [ProductsService, ProductentityService, UserService],
 })
 export class AppModule { }
