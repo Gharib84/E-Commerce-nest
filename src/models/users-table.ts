@@ -5,69 +5,69 @@ export class UsersTable {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
-    name:string;
+    @Column("varchar")
+    name: string;
 
     @Column({
-        unique:true
+        unique: true
     })
-    email:string
+    email: string
 
     @Column()
     password: string;
 
     @Column()
-    role:string;
+    role: string;
 
     @Column()
-    balance:number
+    balance: number
 
 
-    get userID():number {
+    get userID(): number {
         return this.id;
     }
 
-    set ID(id:number) {
+    setID(id: number) {
         id = this.id;
     }
 
-    get userName():string{
+    get userName(): string {
         return this.name
     }
 
-    set setName(name:string){
-        this.name = name;
+    setName(n: string) {
+        this.name = n;
     }
 
-    get userEmail():string{
+    get userEmail(): string {
         return this.email;
     }
 
-    set setEmail(email:string){
+    setEmail(email: string) {
         this.email = email;
     }
 
-    get userPassword():string {
+    get userPassword(): string {
         return this.password;
     }
 
-    set setPassword(pass:any){
+    setPassword(pass: any) {
         this.password = pass
     }
 
-    get userRole():string {
+    get userRole(): string {
         return this.role;
     }
 
-    set setRole(role:string){
+    setRole(role: string) {
         this.role = role;
     }
 
-    get userBalance():number{
+    get userBalance(): number {
         return this.balance;
     }
 
-    set setBalance(balance:number){
+    setBalance(balance: number) {
         this.balance = balance;
     }
 }
