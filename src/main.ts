@@ -16,13 +16,19 @@ async function bootstrap() {
   hbs.registerPartials(join(__dirname, '..', 'views/layouts'));
   hbsUtils(hbs).registerWatchedPartials(join(__dirname, '..', 'views/layouts'));
   app.setViewEngine('hbs');
-  //app.use(cookieParser());
-  /*app.use(session({
-    secret: 'The World Is Flat',
-    resave: false,
-    saveUninitialized: false,
-  }));  
-  app.use(csurf());*/
+  app.use(session(
+    {
+      secret: "The-World-Is-flat",
+      resave: false,
+      saveUninitialized: false
+    }
+  ))
+
+  app.use(function (req, res, next) {
+    res.locals.session = req.session;
+    next();
+
+  })
   await app.listen(3000);
 }
 bootstrap();
