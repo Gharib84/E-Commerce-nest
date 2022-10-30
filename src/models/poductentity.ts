@@ -38,32 +38,43 @@ export class Poductentity {
 
     }
 
-    setPrice(price:number):void {
+    setPrice(price: number): void {
         this.price = price;
     }
 
-    setIcon(icon:string = "arrow.svg"):void {
+    setIcon(icon: string = "arrow.svg"): void {
         this.icon = icon;
     }
 
-   
-    get productID():number {
+
+    get productID(): number {
         return this.id;
     }
 
-    get productImg():string{
+    get productImg(): string {
         return this.img;
     }
 
-    get productTile():string {
+    get productTile(): string {
         return this.title;
     }
 
-    get productSubTitle():string {
+    get productSubTitle(): string {
         return this.subtitle;
     }
 
-    get ProductPrice():number{
+    get ProductPrice(): number {
         return this.price;
+    }
+
+
+    static sumPricesByQuantities(products: Poductentity[], productsInSession):number {
+        let total:number = 0;
+        for (let index = 0; index < products.length; index++) {
+            total = total + products[index].ProductPrice * productsInSession[index].productID;
+            
+        }
+        return total;
+
     }
 }

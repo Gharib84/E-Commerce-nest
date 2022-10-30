@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Repository } from 'typeorm';
+import { In, Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Poductentity } from 'src/models/poductentity';
 
@@ -9,6 +9,7 @@ import { Poductentity } from 'src/models/poductentity';
  * @method product return specific product by iD
  * @method createProduct return new product will be create in db
  * @method deleteProduct for deleting specific product accoridng its iD
+ * @method findbyids that reurn all products selected by ID
  */
 
 @Injectable()
@@ -43,6 +44,12 @@ export class ProductentityService {
             return this.productRepository.save(produt);
         }
 
+    }
+
+    findByIds(ids:string[]):Promise<Poductentity[]>{
+        return this.productRepository.findBy({
+            id: In([ids])
+        })
     }
 
 }

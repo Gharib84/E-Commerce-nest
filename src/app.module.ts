@@ -10,6 +10,7 @@ import { AdminModule } from './admin/admin.module';
 import { UsersTable } from './models/users-table';
 import { UserService } from './services/user/user.service';
 import { AuthModule } from './auth/auth.module';
+import { CartModule } from './cart/cart.module';
 
 
 
@@ -27,7 +28,8 @@ import { AuthModule } from './auth/auth.module';
     }),
     TypeOrmModule.forFeature([Poductentity, UsersTable]),
     AdminModule,
-    AuthModule
+    AuthModule,
+    CartModule
   ],
   controllers: [AppController, ProductsController, AdminController],
   providers: [ProductsService, ProductentityService, UserService],

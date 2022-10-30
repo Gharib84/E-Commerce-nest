@@ -1,0 +1,45 @@
+{{>default}}
+
+<div class="container mt-5 mb-3 mb-lg-5">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center text-dark fw-bold">
+                {{cart}}
+            </h1>
+            <div class="card mb-3 shadow-4">
+                <div class="row g-0">
+                    <div class="col-12">
+                        <h4 class="text-dark text-muted regular">
+                            Products In Carts
+                            <table class="table table-bordered table-striped
+                                text-center">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each cos}}
+                                    <tr>
+                                        <td>{{cos}}</td>
+                                        <td>{{title}}</td>
+                                        <td>${{ProductPrice}}</td>
+                                        <td>{{lookup ../session.products id}}</td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    {{>footer}}
