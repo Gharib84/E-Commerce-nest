@@ -68,10 +68,10 @@ export class Poductentity {
     }
 
 
-    static sumPricesByQuantities(products: Poductentity[], productsInSession):number {
+    static sumPricesByQuantities(products: Poductentity[], productsInSession:any):number {
         let total:number = 0;
         for (let index = 0; index < products.length; index++) {
-            total = total + products[index].ProductPrice * productsInSession[index].productID;
+            total = total + products[index].ProductPrice*productsInSession[products[index].productID];
             
         }
         return total;

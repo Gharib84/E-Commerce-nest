@@ -22,17 +22,22 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {{#each cos}}
+                                    {{#each products}}
                                     <tr>
-                                        <td>{{cos}}</td>
+                                        <td>{{id}}</td>
                                         <td>{{title}}</td>
-                                        <td>${{ProductPrice}}</td>
+                                        <td>${{price}}</td>
                                         <td>{{lookup ../session.products id}}</td>
                                     </tr>
                                     {{/each}}
                                 </tbody>
                             </table>
-
+                            <div class="float-end float-sm-dev">
+                                <button type="button" class="btn btn-dark">Total To
+                                Pay <b style="color:#E6C744;">${{total}}</b></button>
+                            <button type="button" class="btn btn-success">Purchase</button>
+                            <a href="cart/delete" class="btn btn-danger">Remove all products</a>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -33,5 +33,6 @@ import { CartModule } from './cart/cart.module';
   ],
   controllers: [AppController, ProductsController, AdminController],
   providers: [ProductsService, ProductentityService, UserService],
+  exports: [ProductentityService]
 })
 export class AppModule { }

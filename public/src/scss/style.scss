@@ -212,6 +212,13 @@ footer {
             
         }
     }
+
+    .float-sm-dev {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        width: 50%;
+    }
 }
 
 

@@ -17,11 +17,24 @@
                         <div class="card-body">
                             <h5 class="card-title black">{{title}}</h5>
                             <p class="card-text">
-                               {{subtitle}} (${{price}})
+                                {{subtitle}} (${{price}})
                             </p>
-                            <button class="btn btn-dark text-dark" style="background-color: #E6C744;">
+
+                            <form action="/cart/add/{{id}}" method="post">
+                            <p class="black">
+                                Quantity
+                            </p>
+                                <div class="form-outline">
+                                    <input type="number"  min="1" max="10" value="1" id="formControlDefault"
+                                        class="form-control" name="quantity" />
+                                </div>
+
+                                <button  class="btn btn-dark text-dark"
+                                    style="background-color: #E6C744;" type="submit">
                                     Add To Card
-                            </button>
+                                </button>
+                            </form>
+
                         </div>
                     </div>
                 </div>
