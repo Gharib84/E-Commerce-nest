@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany} from "typeorm";
+import { OrdersEntity } from "./orders.entity";
 
 @Entity()
 export class UsersTable {
@@ -21,6 +22,9 @@ export class UsersTable {
 
     @Column()
     balance: number
+
+    @OneToMany(()=> OrdersEntity, (order)=> order.user)
+    orders:OrdersEntity[];
 
 
     get userID(): number {
@@ -69,5 +73,13 @@ export class UsersTable {
 
     setBalance(balance: number) {
         this.balance = balance;
+    }
+
+    get Orders():OrdersEntity[]{
+        return this.orders;
+    }
+
+    set Orders(orders:OrdersEntity[]){
+        this.orders = orders;
     }
 }

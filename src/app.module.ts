@@ -11,6 +11,9 @@ import { UsersTable } from './models/users-table';
 import { UserService } from './services/user/user.service';
 import { AuthModule } from './auth/auth.module';
 import { CartModule } from './cart/cart.module';
+import { OrderedBulkOperation } from 'typeorm';
+import { OrdersEntity } from './models/orders.entity';
+import { ItemsEntity } from './models/items.entity';
 
 
 
@@ -23,10 +26,10 @@ import { CartModule } from './cart/cart.module';
       username: 'root',
       password: '',
       database: 'online_store',
-      entities: [Poductentity,UsersTable],
+      entities: [Poductentity,UsersTable,OrdersEntity,ItemsEntity],
       synchronize: true,
     }),
-    TypeOrmModule.forFeature([Poductentity, UsersTable]),
+    TypeOrmModule.forFeature([Poductentity, UsersTable, OrdersEntity, ItemsEntity]),
     AdminModule,
     AuthModule,
     CartModule

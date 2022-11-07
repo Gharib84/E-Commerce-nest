@@ -3,7 +3,9 @@
  * 
  */
 
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany, } from "typeorm"
+import { ItemsEntity } from "./items.entity"
+
 @Entity()
 export class Poductentity {
     @PrimaryGeneratedColumn()
@@ -23,6 +25,9 @@ export class Poductentity {
 
     @Column()
     icon: string
+
+    @OneToMany(() => ItemsEntity, (item) => item.product)
+    items: ItemsEntity[];
 
 
     setImg(image: string): void {
@@ -67,12 +72,20 @@ export class Poductentity {
         return this.price;
     }
 
+    get Items(): ItemsEntity[] {
+        return this.items;
+    }
 
-    static sumPricesByQuantities(products: Poductentity[], productsInSession:any):number {
-        let total:number = 0;
+    set Items(items: ItemsEntity[]) {
+        this.items = items;
+    }
+
+
+    static sumPricesByQuantities(products: Poductentity[], productsInSession: any): number {
+        let total: number = 0;
         for (let index = 0; index < products.length; index++) {
-            total = total + products[index].ProductPrice*productsInSession[products[index].productID];
-            
+            total = total + products[index].ProductPrice * productsInSession[products[index].productID];
+
         }
         return total;
 
