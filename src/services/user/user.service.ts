@@ -6,6 +6,8 @@ import * as bcrypt from 'bcrypt';
 /**
  * @method createUser to insert new user into our table
  * @method login that check username and his passowrd
+ * @method findUser return specific user according id 
+ * @method updateBalance that update user balance
  * 
  */
 
@@ -37,4 +39,15 @@ export class UserService {
 
         return null;
     }
+
+    async FindUser(id:number):Promise<UsersTable>{
+        return this.userRepository.findOneBy({
+            id:id
+        })
+    }
+
+     updateBalance(id:number, balance:number){
+        return this.userRepository.update(id, {balance: balance});
+    }
+
 }

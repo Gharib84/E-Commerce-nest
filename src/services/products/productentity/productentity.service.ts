@@ -46,7 +46,7 @@ export class ProductentityService {
 
     }
 
-    findByIds(ids:string[]):Promise<Poductentity[]>{
+     findByIds(ids:string[]):Promise<Poductentity[]>{
         return this.productRepository.findBy({
             id: In([ids])
         })

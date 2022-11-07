@@ -14,6 +14,7 @@ import { CartModule } from './cart/cart.module';
 import { OrderedBulkOperation } from 'typeorm';
 import { OrdersEntity } from './models/orders.entity';
 import { ItemsEntity } from './models/items.entity';
+import { OrderService } from './services/order/order.service';
 
 
 
@@ -35,7 +36,7 @@ import { ItemsEntity } from './models/items.entity';
     CartModule
   ],
   controllers: [AppController, ProductsController, AdminController],
-  providers: [ProductsService, ProductentityService, UserService],
-  exports: [ProductentityService]
+  providers: [ProductsService, ProductentityService, UserService, OrderService],
+  exports: [ProductentityService, OrderService, UserService,ProductsService]
 })
 export class AppModule { }
