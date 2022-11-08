@@ -17,8 +17,8 @@ export class ItemsEntity {
     order: OrdersEntity;
 
 
-    @ManyToOne(()=> Poductentity,(product)=> product.items)
-    product:Poductentity;
+    @ManyToOne(() => Poductentity, (product) => product.items)
+    product: Poductentity;
 
     constructor() {
 
@@ -29,7 +29,7 @@ export class ItemsEntity {
         return this.id;
     }
 
-    set ID(id: number) {
+    setID(id: number) {
         this.id = id;
     }
 
@@ -37,7 +37,7 @@ export class ItemsEntity {
         return this.quantity;
     }
 
-    set Quantity(q: number) {
+    SetQuntity(q: number) {
         this.quantity = q;
     }
 
@@ -45,23 +45,23 @@ export class ItemsEntity {
         return this.Price;
     }
 
-    set Price(price: number) {
+    setPrice(price: number) {
         this.prince = price;
     }
 
-    get Order():OrdersEntity{
+    get Order(): OrdersEntity {
         return this.order;
     }
 
-    set Order(order:OrdersEntity){
+    setOrder(order: OrdersEntity) {
         this.order = order;
     }
 
-    get Produt():Poductentity{
+    get Produt(): Poductentity {
         return this.product;
     }
 
-    set Product(product:Poductentity){
+    setProduct(product: Poductentity) {
         this.product = product;
     }
 

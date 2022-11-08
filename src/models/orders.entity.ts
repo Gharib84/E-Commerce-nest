@@ -33,7 +33,7 @@ export class OrdersEntity {
         return this.id;
     }
 
-    set ID(id: number) {
+    setID(id: number) {
         this.id = id;
     }
 
@@ -41,7 +41,7 @@ export class OrdersEntity {
         return this.total;
     }
 
-    set Total(total: number) {
+    setTotal(total: number) {
         this.total = total;
     }
 
@@ -49,7 +49,7 @@ export class OrdersEntity {
         return this.date;
     }
 
-    set DATE(date: Date) {
+    setDATE(date: Date) {
         this.date = date;
     }
 
@@ -57,7 +57,7 @@ export class OrdersEntity {
         return this.user;
     }
 
-    set User(user: UsersTable) {
+    setUser(user: UsersTable) {
         this.user = user;
     }
 
@@ -65,7 +65,7 @@ export class OrdersEntity {
         return this.items;
     }
 
-    set Items(items: ItemsEntity[]) {
+    setItems(items: ItemsEntity[]) {
         this.items = items;
     }
 }
