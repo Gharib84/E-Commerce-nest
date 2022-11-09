@@ -35,8 +35,10 @@
                             <div class="float-end float-sm-dev">
                                 <button type="button" class="btn btn-dark">Total To
                                 Pay <b style="color:#E6C744;">${{total}}</b></button>
-                            <button type="button" class="btn btn-success">Purchase</button>
+                                {{#if products}}
+                            <a href="/cart/purchase" class="btn btn-success">Purchase</a>
                             <a href="/cart/delete" class="btn btn-danger">Remove all products</a>
+                            {{/if}}
                             </div>
                         </div>
                     </div>

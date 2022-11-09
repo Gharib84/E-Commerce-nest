@@ -69,10 +69,10 @@ export class CartController {
     @Get('purchase')
     async purchase(@Req() request: any, @Res() response: any){
         if (!request.session.user) {
-            response.redirect('auth/login');
+            response.redirect('http://localhost:3000/auth/login');
             
         } else if (!request.session.products) {
-            response.redirect('/cart');
+            response.redirect('http://localhost:3000/cart');
         } else {
             const user = await this.user.FindUser(request.session.user.id);
             const productsInSession = request.session.products;
@@ -112,7 +112,7 @@ export class CartController {
 
             };
 
-            return response.render('cart/purchase',view);
+            return response.render('cart/purchase',{view});
 
 
 

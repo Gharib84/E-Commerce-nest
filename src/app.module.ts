@@ -15,6 +15,7 @@ import { OrderedBulkOperation } from 'typeorm';
 import { OrdersEntity } from './models/orders.entity';
 import { ItemsEntity } from './models/items.entity';
 import { OrderService } from './services/order/order.service';
+import { UsersAccountModule } from './users-account/users-account.module';
 
 
 
@@ -33,7 +34,8 @@ import { OrderService } from './services/order/order.service';
     TypeOrmModule.forFeature([Poductentity, UsersTable, OrdersEntity, ItemsEntity]),
     AdminModule,
     AuthModule,
-    CartModule
+    CartModule,
+    UsersAccountModule,
   ],
   controllers: [AppController, ProductsController, AdminController],
   providers: [ProductsService, ProductentityService, UserService, OrderService],
