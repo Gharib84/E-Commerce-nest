@@ -26,9 +26,7 @@ export class OrderService {
             where: {
                 user: { id: id },
                 },
-                relations: {
-                    user:true
-                }
+                relations: ['items', 'items.product'],
         })
     }
 

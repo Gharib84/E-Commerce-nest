@@ -17,7 +17,7 @@ export class OrdersEntity {
     @ManyToOne(() => UsersTable, (user) => user.orders)
     user: UsersTable;
 
-    @OneToMany(() => ItemsEntity, (item) => item.prince,{
+    @OneToMany(() => ItemsEntity, (item) => item.order,{
         cascade: ['insert']
     })
     items: ItemsEntity[];

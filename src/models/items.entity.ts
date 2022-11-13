@@ -11,7 +11,7 @@ export class ItemsEntity {
     quantity: number;
 
     @Column()
-    prince: number;
+    price: number;
 
     @ManyToOne(() => OrdersEntity, (order) => order.items)
     order: OrdersEntity;
@@ -46,7 +46,7 @@ export class ItemsEntity {
     }
 
     setPrice(price: number) {
-        this.prince = price;
+        this.price = price;
     }
 
     get Order(): OrdersEntity {
