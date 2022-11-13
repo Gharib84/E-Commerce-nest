@@ -45,8 +45,8 @@ export class OrdersEntity {
         this.total = total;
     }
 
-    get DATE(): Date {
-        return this.date;
+    get DATE(): string {
+        return this.date.toISOString().split('T')[0];
     }
 
     setDATE(date: Date) {

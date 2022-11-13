@@ -25,6 +25,12 @@
         </li>
         <li class="nav-item">
           <a class="nav-link medium hover" href="/products">Products</a>
+          {{#if session.user}}
+             <li class="nav-item">
+          <a class="nav-link medium hover" href="/account/orders">My Orders</a>
+        </li>
+
+          {{/if}}
         </li>
         <li class="nav-item">
           <a class="nav-link medium hover" href="/cart">Cart</a>

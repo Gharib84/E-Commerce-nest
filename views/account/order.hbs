@@ -1,15 +1,58 @@
 {{>default}}
 
-<h2>
-    cos
-</h2>
-{{#each viewData.orders}}
+<div class="container mt-5">
+    {{#each viewData.orders}}
+    <div class="card mb-5">
 
-    <h1>
-        {{total}}
-    </h1>
+        <div class="card-header">Order ID #{{ID}}</div>
+        <div class="card-body">
+            <h5 class="card-title black text-bold">My orders</h5>
+            <p class="card-text">
+                {{DATE}}
+            </p>
+            <b>
+                Total:
+            </b>
+            <span class="text-primary">
+                ${{Total}}
+            </span>
+            <table class="table table-striped table-hover ">
+                <thead>
+                    <tr>
+                        <th scope="col">Item ID</th>
+                        <th scope="col">Product Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each items}}
+                    <tr>
+                        <th scope="row">{{ID}}</th>
+                        {{#with product}}
+                        <td>
+                            <a href="/products/{{productID}}">
+                                {{title}}
+                            </a>
+                        </td>
+                        {{/with}}
+                        <td>
+                            ${{price}}
+                        </td>
+                        <td>
+                            {{quantity}}
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
 
-{{/each}}
-
-
+            </table>
+        </div>
+        {{else}}
+        <div class="alert alert-danger" role="alert">
+            Seems to be that you have not purchased anything in our store.
+        </div>
+    </div>
+    {{/each}}
+</div>
 {{>footer}}

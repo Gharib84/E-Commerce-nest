@@ -57,7 +57,7 @@ export class ItemsEntity {
         this.order = order;
     }
 
-    get Produt(): Poductentity {
+    get Product(): Poductentity {
         return this.product;
     }
 
