@@ -20,4 +20,4 @@ from the cart and make purchases.
 + Registeration And Login System For Users And Admin
 > To Login Into Admin Panel Please Insert 
   **User Name: admin@panel.com**
-   **PassWord: 123**
+   **PassWord: 123**![Slide 16_9 - 1](https://user-images.githubusercontent.com/29811601/211368106-72268db8-9166-4761-acdf-46adf688d3d3.png)
