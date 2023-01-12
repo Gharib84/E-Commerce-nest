@@ -1,23 +1,17 @@
 #  Ecommerce Store
->  Ecommerce Store Is Web Application Built With Node Js , MYSQL Database, Material Design Boostrap5 [MDBOOTSTRAP] And HandelBars
-## Let's Define The Application Scope For The Ecommerce Web App:
-+ Home page: Will display a ShowCase For Ecommerce Store With welcome message and some images.
-+ About page: Will display information about the Ecommerce Store and developer.
-+ Products page: Will display the available products information. You can click on a specific product and see its
-information.
-+ Cart page: Will display the products added to the cart and the total price to be paid. A user can remove products
-from the cart and make purchases.
-+ Register page: Will display a form to allow users to sign up for accounts.
-+ Login page: Will display a form to allow users to log in to the application.
-+ My orders page will display the orders placed by the logged in user.
-+ Admin panel will contain sections to manage the store’s products (create, update, delete, and list them).
+>  The Ecommerce Store is a web application that is built using Node.js, a MySQL database, Material Design Bootstrap 5 (MDBOOTSTRAP), and Handlebars. The purpose of this application is to provide an easy-to-use platform for customers to browse, purchase, and manage products.
+## The application includes several key features:
++ Home page: Showcases the Ecommerce Store with a welcoming message and images.
++ About page: Provides information about the Ecommerce Store and the developer.
++ Products page: Displays all available products, with the ability to view more details about a specific product by clicking on it.
++ Cart page: Allows customers to view and manage the products they have added to their cart, including the total cost and the ability to remove items or proceed with the purchase.
++ Register page: Allows customers to create an account by filling out a form.
++ Login page: Allows customers to log in to their account.
++ My orders page: Allows customers to view their past orders.
++ Admin panel: Allows the store administrator to manage the products, including creating, updating, deleting and listing them.
 ## Ecommerce Store Web Application Philosophy
-+ The Philosophy Of Ecommerce Store Web Application Depend On Typescript Implementation From Frontend To BackEnd 
-  Where I Used Nest Typescript With Express js Spirit To Achieve 
-+ MVC Model View And Controller
-+ Authentication System That Depend On Express Session
-+ Implements Database Design By Using TypeORM library that makes it easy to link your TypeScript application up to a relational database database
-+ Registeration And Login System For Users And Admin
+The philosophy behind the Ecommerce Store web application is to provide a seamless and efficient user experience through the use of TypeScript implementation from front-end to back-end using Nest TypeScript with Express.js. The application follows the MVC pattern, and implements an authentication system that utilizes Express sessions. The database design is implemented using the TypeORM library, which makes it easy to connect the application to a relational database. Additionally, the application includes a registration and login system for both customers and the store administrator.
+
 > To Login Into Admin Panel Please Insert 
   **User Name: admin@panel.com**
    **PassWord: 123**![Slide 16_9 - 1](https://user-images.githubusercontent.com/29811601/211368106-72268db8-9166-4761-acdf-46adf688d3d3.png)
