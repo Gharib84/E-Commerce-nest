@@ -1,4 +1,4 @@
-#  Ecommerce Store
+#  Ecommerce Store:
 >  The Ecommerce Store is a web application that is built using Node.js, a MySQL database, Material Design Bootstrap 5 (MDBOOTSTRAP), and Handlebars. The purpose of this application is to provide an easy-to-use platform for customers to browse, purchase, and manage products.
 ## The application includes several key features:
 + Home page: Showcases the Ecommerce Store with a welcoming message and images.
